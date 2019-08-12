@@ -7,10 +7,29 @@
 	<body>
 
 		<h1>Adicionar notícia</h1>
+		<br/>
 
+		<% if(erro) { %>
+			<ul>
+				<% for(let i; i < erro.length; i++) {%>
+				<li>
+					<%= erro[i].msg %>
+				</li>
+				<% } %>
+			</ul>
+		<% }%>
 		<form action="/noticias/salvar" method="POST">
 			<label for="titulo">Título da Notícia</label>
 			<input type="text" id="titulo" name="titulo" placeholder="Título da notícia"/>
+			<br/>
+			<label for="resumo">Resumo da Notícia</label>
+			<input type="text" id="resumo" name="resumo" placeholder="Título da notícia"/>
+			<br/>
+			<label for="autor">Autor da Notícia</label>
+			<input type="text" id="autor" name="autor" placeholder="Autor da notícia"/>
+			<br/>
+			<label for="data_noticia">Data da Notícia</label>
+			<input type="date" id="data_noticia" name="data_noticia" placeholder="Data da notícia"/>
 			<br/>
 			<label for="noticia">Notícia</label>
 			<textarea id="noticia" name="noticia" rows="5" cols="30"></textarea>
